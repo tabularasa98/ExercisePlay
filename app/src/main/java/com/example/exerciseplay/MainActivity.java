@@ -38,10 +38,11 @@ import java.util.concurrent.Executors;
 public class MainActivity extends AppCompatActivity {
     final MainActivity main = this;
     DatabaseReference sdatabase;
-    List<Song> slist = new ArrayList<>();
+
     public void makeRequest(String t_name){
         List<Song> results = new ArrayList<>();
         sdatabase = FirebaseDatabase.getInstance().getReference("songs");
+
         AndroidNetworking.get("https://api.deezer.com/search/track")
                 .addQueryParameter("q", t_name)
                 .setExecutor(Executors.newSingleThreadExecutor())
@@ -76,6 +77,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        List<Song> slist = new ArrayList<>();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -97,11 +101,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        Button test = findViewById(R.id.button);
-        test.setOnClickListener(new View.OnClickListener() {
+        Button select_playlist = findViewById(R.id.create_playlists);
+        select_playlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(main, addSongs.class);
+                Intent intent = new Intent(main, managePlaylists.class);
                 startActivity(intent);
             }
         });
