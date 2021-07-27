@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExercisePlay">
-        <activity android:name=".removePlaylist"></activity>
+        <activity android:name=".addExercises"></activity>
+        <activity android:name=".viewWorkout" />
+        <activity android:name=".removeWorkout" />
+        <activity android:name=".ManageWorkouts" />
+        <activity android:name=".removePlaylist" />
         <activity android:name=".viewPlaylist" />
         <activity android:name=".managePlaylists" />
         <activity android:name=".addSongs" />

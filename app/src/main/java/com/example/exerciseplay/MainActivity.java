@@ -92,8 +92,6 @@ public class MainActivity extends AppCompatActivity {
                 while(iter.hasNext()){
                     slist.add(iter.next().getValue(Song.class));
                 }
-
-                //((TextView) findViewById(R.id.textView)).setText(slist.toString());
             }
 
             @Override
@@ -106,6 +104,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(main, managePlaylists.class);
+                startActivity(intent);
+            }
+        });
+
+        Button select_workout = findViewById(R.id.workout_menu);
+        select_workout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(main, ManageWorkouts.class);
                 startActivity(intent);
             }
         });
