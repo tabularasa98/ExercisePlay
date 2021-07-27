@@ -6,6 +6,13 @@ public class Exercise {
     private int rep;
     private int set;
     private int duration;
+    public Exercise(){
+        this.name = "";
+        this.weight =  0;
+        this.rep =  0;
+        this.set =  0;
+        this.duration = 0;
+    }
 
     public Exercise(String name, int weight, int rep, int set, int duration){
         this.name = name;
@@ -13,6 +20,16 @@ public class Exercise {
         this.rep =  rep;
         this.set =  set;
         this.duration = duration;
+    }
+
+    public String toString(){
+        String whole;
+        whole = "Name: " + name +'\n';
+        whole += "Weight: " + weight + '\n';
+        whole += "Reps: " + rep + '\n';
+        whole += "Sets: " + set + '\n';
+        whole += "Duration: " + duration + '\n';
+        return whole;
     }
 
     public String getName() {
